@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Fixed:pixelsize=18:antialias=true:autohint=false";
+static char *font = "Comic Code:pixelsize=16:antialias=true:autohint=false";
 /* Spare fonts */
 static char *font2[] = {
-    "Symbols Nerd Font:pixelsize=18:antialias=true:autohint=false"
+    "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=false"
 };
 
 static int borderpx = 2;
@@ -32,7 +32,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.0;
+static float chscale = 1.25;
 
 /*
  * word delimiter string
@@ -70,7 +70,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 3;
+static unsigned int cursorthickness = 2;
 
 /*
  * 1: render most of the lines/blocks characters without using the font for
@@ -120,7 +120,7 @@ static const char *colorname[] = {
 	"#57a5e5",
 	"#bb70d2",
 	"#51a8b3",
-	"#818387",
+	"#a7aab0",
 
 	/* 8 bright colors */
 	"#5a5b5e",
@@ -130,7 +130,7 @@ static const char *colorname[] = {
 	"#57a5e5",
 	"#bb70d2",
 	"#51a8b3",
-	"#a7aab0",
+	"#ffffff",
 
 	[256] = "#e2c792",
 };
@@ -140,7 +140,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
+unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 0;
@@ -206,8 +206,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_plus,        zoom,           {.f = +2} },
-	{ TERMMOD,              XK_underscore,  zoom,           {.f = -2} },
+	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
+	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
 	{ TERMMOD,              XK_BackSpace,   zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
