@@ -111,6 +111,8 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+
+/* onedark.warmer */
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#232326",
@@ -134,7 +136,6 @@ static const char *colorname[] = {
 
 	[256] = "#e2c792",
 };
-
 
 /*
  * Default colors (colorname index)
