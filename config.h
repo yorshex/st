@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Comic Code:pixelsize=16:antialias=true:autohint=false";
+static char *font = "Comic Code:pixelsize=18:antialias=true:autohint=false";
 /* Spare fonts */
 static char *font2[] = {
-    "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=false"
+    "Symbols Nerd Font:pixelsize=18:antialias=true:autohint=false"
 };
 
 static int borderpx = 2;
@@ -112,30 +112,35 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 
-/* onedark.warmer */
+#define MY_THEME ONEDARK
+
+#if MY_THEME==ONEDARK
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#232326",
-	"#de5d68",
-	"#8fb573",
-	"#dbb671",
-	"#57a5e5",
-	"#bb70d2",
-	"#51a8b3",
-	"#a7aab0",
+	"#282c34", "#e86671", "#98c379", "#e5c07b",
+	"#61afef", "#c678dd", "#56b6c2", "#abb2bf",
 
 	/* 8 bright colors */
-	"#5a5b5e",
-	"#de5d68",
-	"#8fb573",
-	"#dbb671",
-	"#57a5e5",
-	"#bb70d2",
-	"#51a8b3",
-	"#ffffff",
+	"#5c6370", "#e86671", "#98c379", "#e5c07b",
+	"#61afef", "#c678dd", "#56b6c2", "#ffffff",
+
+	[256] = "#ebd09c",
+};
+#elif MY_THEME==ONEDARK_WARMER
+static const char *colorname[] = {
+	/* 8 normal colors */
+	"#232326", "#de5d68", "#8fb573", "#dbb671",
+	"#57a5e5", "#bb70d2", "#51a8b3", "#a7aab0",
+
+	/* 8 bright colors */
+	"#5a5b5e", "#de5d68", "#8fb573", "#dbb671",
+	"#57a5e5", "#bb70d2", "#51a8b3", "#ffffff",
 
 	[256] = "#e2c792",
 };
+#else
+#error "Theme doesn't exist"
+#endif
 
 /*
  * Default colors (colorname index)
