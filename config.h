@@ -8,10 +8,12 @@
 static char *font = "Comic Code:pixelsize=18:antialias=true:autohint=false";
 /* Spare fonts */
 static char *font2[] = {
-    "Symbols Nerd Font:pixelsize=18:antialias=true:autohint=false"
+    "Symbols Nerd Font:pixelsize=18:antialias=true:autohint=false",
+    "Iosevka:pixelsize=18:antialias=true:autohint=false",
+    "Noto Sans Mono CJK JP:pixelsize=18:antialias=true:autohint=false",
 };
 
-static int borderpx = 2;
+static int borderpx = 8;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -32,7 +34,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.4;
+static float chscale = 1.25;
 
 /*
  * word delimiter string
