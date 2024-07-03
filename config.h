@@ -114,44 +114,30 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 
-#define MY_THEME ONEDARK
-
-#if MY_THEME==ONEDARK
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#282c34", "#e86671", "#98c379", "#e5c07b",
-	"#61afef", "#c678dd", "#56b6c2", "#abb2bf",
+	"#3b4252", "#bf616a", "#a3be8c", "#ebcb8b",
+	"#81a1c1", "#b48ead", "#88c0d0", "#e5e9f0",
 
 	/* 8 bright colors */
-	"#5c6370", "#e86671", "#98c379", "#e5c07b",
-	"#61afef", "#c678dd", "#56b6c2", "#ffffff",
+	"#4c566a", "#bf616a", "#a3be8c", "#ebcb8b",
+	"#81a1c1", "#b48ead", "#8fbcbb", "#eceff4",
 
-	[256] = "#ebd09c",
+	[256] = "#d8dee9",
+	[257] = "#2e3440",
+	[258] = "#d8dee9",
+	[259] = "#2e3440",
 };
-#elif MY_THEME==ONEDARK_WARMER
-static const char *colorname[] = {
-	/* 8 normal colors */
-	"#232326", "#de5d68", "#8fb573", "#dbb671",
-	"#57a5e5", "#bb70d2", "#51a8b3", "#a7aab0",
 
-	/* 8 bright colors */
-	"#5a5b5e", "#de5d68", "#8fb573", "#dbb671",
-	"#57a5e5", "#bb70d2", "#51a8b3", "#ffffff",
-
-	[256] = "#e2c792",
-};
-#else
-#error "Theme doesn't exist"
-#endif
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
